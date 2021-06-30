@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ViewLoads {
+    width: 100%;
+    margin: 0 auto;
+}
+table, th, td {
+    
+    border: 1px black solid;
+}
+
+.table-Button {
+    width: 100%;
+    height: 100%;
+
+}
