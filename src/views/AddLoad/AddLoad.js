@@ -37,15 +37,20 @@ export const AddLoad = (props) => {
         <Button variant="primary" type="submit">
           Submit
         </Button>
-        <Form.Control as="select">
+      
+        
+      </Form>
+      <Form className="email-submission">
+        <Form.Group>
+          <Form.Control as="select">
             <option value="TweedLandscape@gmail.com">TweedLandscape@gmail.com</option>
             <option value="Accounts@chinderahgolf.com">Accounts@chinderahgolf.com</option>
           </Form.Control>
+        </Form.Group>
         <Button variant="primary" type="submit">
           Send Docket
         </Button>
       </Form>
-      
       
     </div>
   );
