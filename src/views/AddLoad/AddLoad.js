@@ -1,5 +1,5 @@
 import { react } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 
 
@@ -34,7 +34,16 @@ export const AddLoad = (props) => {
           <Form.Label>Number Plate:</Form.Label>
           <Form.Control as="input" type="text" id="numberPlate" name="numberPlate"></Form.Control>
         </Form.Group>
-
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+        <Form.Control as="select">
+            <option value="TweedLandscape@gmail.com">TweedLandscape@gmail.com</option>
+            <option value="Accounts@chinderahgolf.com">Accounts@chinderahgolf.com</option>
+          </Form.Control>
+        <Button variant="primary" type="submit">
+          Send Docker
+        </Button>
       </Form>
       
       {/* <form>

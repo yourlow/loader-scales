@@ -9,46 +9,45 @@ import {
   Link
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Component } from 'react';
+import { Button } from "react-bootstrap";
 function App() {
   return (
     <Router>
       <div>
-        <nav>
-            <Link to="/add-loads">
-              <button>Add Loads</button>
-            </Link>
-          
-            <Link to="/view-loads">
-            <button>View Loads</button>
-            </Link>
-        </nav>
-
+      
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/add-loads">
-            <AddLoad />
-          </Route>
-          <Route path="/view-loads">
-            <ViewLoads />
-          </Route>
+          <Route path="/add-loads" component={AddLoad}/>
+
+          <Route path="/view-loads" component={ViewLoads}/>
+          <Route component={Navigation}/>
         </Switch>
       </div>
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
+class Navigation extends Component {
+  render() {
+    return (
+      <div className="nav">
+        <div className="buttons">
+        <Link to="/add-loads"  >
+          <Button variant="primary" size="lg" block className="nav-button">
+            Add Load
+          </Button>
+        </Link>
+        <Link to="/view-loads"  >
+          <Button variant="primary" size="lg" block className="nav-button">
+            View Load
+          </Button>
+        </Link>
+        </div>
+      </div>
+    );
+  }
 }
 
 
