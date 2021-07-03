@@ -1,10 +1,13 @@
-import { react } from "react";
+import { react, useState, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+
 import "./ViewLoads.css"
 
 const MOCKLoads = [
@@ -35,34 +38,56 @@ const MOCKLoads = [
     
   ]
 
-
+const getLoads = async () => {
+  return await fetch("http://127.0.0.1:5000/loads")
+}
 
 export const ViewLoads = () => {
-
+  const [ loads, setLoads ] = useState([]);
+  useEffect(() => {
+    getLoads().then(res => {
+      return res.json()
+    }).then(result => setLoads(result));
+    return () => {
+      
+    }
+  }, [])
 
   return (
     <div>
-      {MOCKLoads.slice(0).reverse().map((el) => {
+      <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th className="JobNumber">JobNumber</th>
+          <th className="EndTimeDate">Date</th>
+          <th className="UnitWeight">Unit Weight</th>
+          <th className="ProductName">Product</th>
+          <th className="CustomerName">Customer</th>
+          <th className="Edit">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+      {loads.slice(0).reverse().map((el) => {
         return (
-          <div className="ViewLoads">
-            
-            <table className= "table">
               <tr>
-                <td>
+                
+                <td className="JobNumber">{el.JobNumber}</td> 
+                <td className="EndTimeDate">{el.EndTimeDate}</td> 
+                <td className="UnitWeight">{el.UnitWeight}</td> 
+                <td className="ProductName">{el.ProductName}</td> 
+                <td className="CustomerName">{el.CustomerName}</td> 
+                <td className="Edit">
                 <Link to="/edit-load">
-                  <button className="table-Button">Edit</button>
+                  <Button variant="primary">Edit</Button>
                 </Link>
                 </td>
-                <td>{el.JobNumber}</td> 
-                <td>{el.Date}</td> 
-                <td>{el.Weight}</td> 
-                <td>{el.ProductName}</td> 
-                <td>{el.CustomerName}</td> 
               </tr>
-            </table>
-          </div>
+           
+          
         )
       })}
+      </tbody>
+      </Table>
     </div>
   );
 }

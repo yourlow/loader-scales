@@ -1,14 +1,12 @@
-table {
+/* table {
     border-collapse: collapse;
     width: 100%;
+    table-layout:fixed
+    
 }
 
-.ViewLoads {
-    width: 100%;
-    margin: 0 auto;
-}
+
 table, th, td {
-    
     border: 1px black solid;
 }
 
@@ -17,3 +15,26 @@ table, th, td {
     height: 100%;
 
 }
+
+th, td {
+    text-align: center;
+} */
+
+/* .Edit{
+    width: 20px;
+}
+.JobNumber{
+    width: 20px;
+}
+.EndTimeDate{
+    width: 20px;
+}
+.UnitWeight{
+    width: 20px;
+}
+.ProductName{
+    width: 20px;
+}
+.CustomerName{
+    width: 20px;
+} */
