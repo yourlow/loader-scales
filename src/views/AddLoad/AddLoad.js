@@ -1,6 +1,6 @@
 import { react } from "react";
 import { Form, Button } from "react-bootstrap";
-
+import './addpage.css';
 
 
 
@@ -8,7 +8,7 @@ export const AddLoad = (props) => {
 
 
   return (
-    <div>
+    <div className="add-page">
 
       <h1>Add a Load</h1>
       <Form>
