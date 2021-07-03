@@ -38,6 +38,10 @@ const MOCKLoads = [
     
   ]
 
+
+
+
+
 const getLoads = async () => {
   return await fetch("http://127.0.0.1:5000/loads")
 }
@@ -49,7 +53,6 @@ export const ViewLoads = () => {
       return res.json()
     }).then(result => setLoads(result));
     return () => {
-      
     }
   }, [])
 

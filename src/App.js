@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { AddLoad } from './views/AddLoad/AddLoad';
 import { ViewLoads } from './views/ViewLoads/ViewLoads';
+import { EditLoad} from './views/EditLoad/EditLoad';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +23,7 @@ function App() {
           <Route path="/add-loads" component={AddLoad}/>
 
           <Route path="/view-loads" component={ViewLoads}/>
+          <Route path="/edit-load" component={EditLoad}/>
           <Route component={Navigation}/>
         </Switch>
       </div>
